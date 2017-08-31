@@ -1,5 +1,5 @@
 <?php
-$mysqli = new mysqli('localhost' ,'root' ,'123io' , '')
+$mysqli = new mysqli('localhost' ,'root' ,'12345' , 'exam')
 
 ?>
 
