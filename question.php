@@ -1,6 +1,28 @@
 <?php
-$mysqli = new mysqli('localhost' ,'root' ,'12345' , 'e')
+$mysqli = new mysqli('localhost' ,'root' ,'12345' , 'exam');
 
+if ($mysqli->connect_error) {
+	die("Connection failed: " . $mysqli->connect_error);
+}
+
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+	$branch = $_POST['branch'];
+	$sem = $_POST['sem'];
+	$id = $_POST['id'];
+	$question_no = $_POST['question_no'];
+	$sql = "INSERT INTO question (branch, sem, id, question_no) VALUES ('$branch', '$sem', '$id', '$question_no')";
+	if ($mysqli->query($sql) === TRUE) {
+		echo "New record created successfully";
+		// header("location: student_login.php");
+	}
+	 else {
+	echo "Error: " . $sql . "<br>" . $mysqli->error;
+			}
+
+}
+else{
+	echo "not connected server";
+}
 ?>
 
 <!DOCTYPE html>
