@@ -13,7 +13,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$sql = "INSERT INTO question (branch, sem, id, question_no) VALUES ('$branch', '$sem', '$id', '$question_no')";
 	if ($mysqli->query($sql) === TRUE) {
 		echo "New record created successfully";
-		// header("location: student_login.php");
+		header("location: setquestion.php");
 	}
 	 else {
 	echo "Error: " . $sql . "<br>" . $mysqli->error;
