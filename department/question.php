@@ -1,4 +1,7 @@
 <?php
+// Start the session
+session_start();
+
 $mysqli = new mysqli('localhost' ,'root' ,'12345' , 'exam');
 
 if ($mysqli->connect_error) {
@@ -10,8 +13,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$sem = $_POST['sem'];
 	$id = $_POST['id'];
 	$question_no = $_POST['question_no'];
-	
-	$verify = "SELECT id FROM `question` WHERE id=1235";
+	// created a session and passed it 
+	$_SESSION["id"] = $id;
+
+	$verify = "SELECT id FROM `question` WHERE id=$id";
 	$result_verify = $mysqli->query($verify);
 	$count = mysqli_num_rows($result_verify);
 	if($count>0){

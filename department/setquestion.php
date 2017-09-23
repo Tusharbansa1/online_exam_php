@@ -11,12 +11,23 @@
 		<!-- php here to get the no. of question value and use it to make inpput form -->
 		
 		<?php
+
+		// Start the session
+		session_start();
+
 		$mysqli = new mysqli('localhost' ,'root' ,'12345' , 'exam');
 		if ($mysqli->connect_error) {
 			die("Connection failed: " . $mysqli->connect_error);
 		}
 		// sql command to get question no.
-$sql = "SELECT question_no FROM question WHERE id='1235'";
+		
+		// session value is taken here
+		$id_session = $_SESSION["id"] ;
+
+		// echo "<br><br>". $id_session ."<br>" ;
+
+// this is to select no. of question from that question id
+$sql = "SELECT question_no FROM question WHERE id='$id_session'";
 		$result_verify = $mysqli->query($sql);	
 		$count = mysqli_num_rows($result_verify);	
 		$row = mysqli_fetch_assoc($result_verify);
