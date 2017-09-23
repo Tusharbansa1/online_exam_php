@@ -10,6 +10,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$sem = $_POST['sem'];
 	$id = $_POST['id'];
 	$question_no = $_POST['question_no'];
+	
+	$verify = "SELECT id FROM `question` WHERE id=1235";
+	$result_verify = $mysqli->query($verify);
+	$count = mysqli_num_rows($result_verify);
+	if($count>0){
+		echo "Sorry, This id exist already <br>";
+	}
+	else{
 	$sql = "INSERT INTO question (branch, sem, id, question_no) VALUES ('$branch', '$sem', '$id', '$question_no')";
 	if ($mysqli->query($sql) === TRUE) {
 		echo "New record created successfully";
@@ -18,7 +26,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	 else {
 	echo "Error: " . $sql . "<br>" . $mysqli->error;
 			}
-
+}
 }
 else{
 	echo "not connected server";
