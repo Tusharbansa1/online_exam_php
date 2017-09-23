@@ -13,9 +13,9 @@
 <body>
 <div class="text-center">
 	<h2>Welcome</h2>
-	<a href="student_signup.php"><h3> Student Sign up</h3></a><br>
-	<a href="student_login.php"><h3>Student sign in</h3></a><br>
-	<a href="department_login.php"><h3>Department login</h3>
+	<a href="./student/student_signup.php"><h3> Student Sign up</h3></a><br>
+	<a href="student/student_login.php"><h3>Student sign in</h3></a><br>
+	<a href="./department/department_login.php"><h3>Department login</h3>
 	</a>
 </div>
 </body>

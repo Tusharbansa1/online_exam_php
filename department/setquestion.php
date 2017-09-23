@@ -26,7 +26,7 @@ $sql = "SELECT question_no FROM question WHERE id='1235'";
 		} else {
 		echo "Error: " . $sql . "<br>" . $mysqli->error;
 			}
-			echo $inputform;
+			// echo $inputform;
 		
 
 
@@ -34,21 +34,23 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	// echo $inputform;
 	// echo "<br>";
 for($i=1;$i<=$inputform;$i++){
-	$question = $_POST['Q'.$i];
+$quest = $_POST['Q'.$i];
 $try1 = $_POST['option1'.$i];
 $try2 = $_POST['option2'.$i];
 $try3 = $_POST['option3'.$i];
 $try4 = $_POST['option4'.$i];
-echo $try1;
+$try5 = $_POST['option5'.$i];
 
-echo $try2;
+$sql = "INSERT INTO setquestion (question ,option1, option2 , option3 , option4, option5, paper_id,question_id)
+	VALUES ('$quest','$try1','$try2', '$try3', '$try4','$try5','1234','1234$i')";
 
-echo $try3;
-
-
-echo $try4;
-
-echo $question;
+	if ($mysqli->query($sql) === TRUE) {
+		echo "New record created successfully";
+		// header("location: student_login.php");
+	}
+	 else {
+	echo "Error: " . $sql . "<br>" . $mysqli->error;
+			}
 
 }
 echo "<br>this is wokr";
@@ -77,6 +79,8 @@ else{
 	<input type="text" name="option3<?php echo $i;?>"> <br> <br>
 	<?php echo 'option4'.$i.''; ?>
 	<input type="text" name="option4<?php echo $i;?>"> <br> <br>
+	<?php echo 'answer5'.$i.''; ?>
+	<input type="text" name="option5<?php echo $i;?>"> <br> <br>
 <?php
 	}
 	?>
