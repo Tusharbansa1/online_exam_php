@@ -8,10 +8,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Landing Page - Start Bootstrap Theme</title>
+    <title>Online exam</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" href="./img/icon.ico">
 
     <!-- Custom fonts for this template -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -37,7 +38,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">Start Bootstrap</a>
+        <a class="navbar-brand" href="#">Start Online Exam</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -62,13 +63,13 @@
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="#" class="btn btn-secondary btn-lg">
+              <a href="https://github.com/Tusharbansa1" class="btn btn-secondary btn-lg">
                 <i class="fa fa-github fa-fw"></i>
                 <span class="network-name">Github</span>
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="#" class="btn btn-secondary btn-lg">
+              <a href="https://www.linkedin.com/in/tushar-bansal-848242142/" class="btn btn-secondary btn-lg">
                 <i class="fa fa-linkedin fa-fw"></i>
                 <span class="network-name">Linkedin</span>
               </a>
@@ -173,15 +174,15 @@
           </li>
           <li class="footer-menu-divider list-inline-item">&sdot;</li>
           <li class="list-inline-item">
-            <a href="#about">Sign in</a>
+            <a href="./student/student_signup.php">Sign up</a>
           </li>
           <li class="footer-menu-divider list-inline-item">&sdot;</li>
           <li class="list-inline-item">
-            <a href="#services">Sign up</a>
+            <a href="./student/student_login.php">Sign in</a>
           </li>
           <li class="footer-menu-divider list-inline-item">&sdot;</li>
           <li class="list-inline-item">
-            <a href="#contact">Department signin</a>
+            <a href="./department/department_login.php">Department signin</a>
           </li>
         </ul>
         <p class="copyright text-muted small">Copyright &copy; Online exam 2017. All Rights Reserved</p>
