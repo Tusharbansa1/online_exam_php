@@ -53,7 +53,7 @@ $try4 = $_POST['option4'.$i];
 $try5 = $_POST['option5'.$i];
 
 $sql = "INSERT INTO setquestion (question ,option1, option2 , option3 , option4, option5, paper_id,question_id)
-	VALUES ('$quest','$try1','$try2', '$try3', '$try4','$try5','1234','1234$i')";
+	VALUES ('$quest','$try1','$try2', '$try3', '$try4','$try5','$id_session','$id_session$i')";
 
 	if ($mysqli->query($sql) === TRUE) {
 		echo "New record created successfully";

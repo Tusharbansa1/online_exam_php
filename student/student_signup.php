@@ -12,6 +12,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$branch = $_POST['branch'];
 	$email = $_POST['email'];
 	$password =  md5($_POST['password']);
+	$password1 = md5($_POST['password1']);
+	if($password==$password1){
 $verify = "SELECT email FROM signup WHERE email='$email'";
 $result_verify = $mysqli->query($verify);
 
@@ -32,6 +34,9 @@ else{
 	echo "Error: " . $sql . "<br>" . $mysqli->error;
 			}
 	}
+}else{
+	echo "password does not match";
+}
 }
 
 ?>
@@ -193,7 +198,7 @@ body{
 
     <div class="section"><span>3</span>Passwords</div>
         <div class="inner-wrap">
-        <label>Password <input type="password" id="pass1" name="pasword"  /></label>
+        <label>Password <input type="password" id="pass1" name="password"  /></label>
         <label>Confirm Password <input id="pass2" type="password" name="password1" /></label>
         <span id="confirmMessage" class="confirmMessage"></span>
     </div>
