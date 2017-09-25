@@ -7,7 +7,7 @@
 <body>
 	<?php
 	
-	 session_start();
+	session_start();
 
 	$mysqli = new mysqli('localhost' ,'root' ,'12345' , 'exam');
 
@@ -18,8 +18,21 @@
 	if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$code = $_POST['code'];
 
-		 $_SESSION["code"] = $code;
-		header("location: solvepaper.php");
+		$sql = "SELECT id,question_no FROM `question` WHERE id='$code'";
+		$result_verify = $mysqli->query($sql);
+
+		$count = mysqli_num_rows($result_verify);
+		if($count>0){
+			$row = mysqli_fetch_assoc($result_verify);
+ 			$_SESSION["question_no"] = $row["question_no"];
+ 			
+ 			
+			$_SESSION["code"] = $code;
+			header("location: solvepaper.php");
+		}
+		else{
+			echo "this code is wrong";
+		}
 	}
 	?>
 
